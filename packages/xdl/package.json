@@ -99,7 +99,7 @@
     "webpack": "4.39.0",
     "webpack-dev-server": "3.2.0",
     "xcode": "^2.1.0",
-    "xmldom": "0.1.27"
+    "xmldom": "~0.1.31"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
@@ -110,6 +110,7 @@
     "@types/getenv": "^0.7.0",
     "@types/globby": "6.1.0",
     "@types/hashids": "^1.0.30",
+    "@types/jest": "^24.9.1",
     "@types/joi": "^14.3.3",
     "@types/js-yaml": "^3.12.2",
     "@types/minipass": "^2.2.0",
