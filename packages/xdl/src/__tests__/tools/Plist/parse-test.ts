@@ -1,6 +1,6 @@
 import assert from 'assert';
 
-import { parse } from '../../tools/Plist';
+import plist from '../../../tools/Plist';
 
 function parseFixture(string: string) {
   const intro = `
@@ -8,7 +8,7 @@ function parseFixture(string: string) {
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 `;
-  return parse(intro + string + '</plist>');
+  return plist.parse(intro + string + '</plist>');
 }
 
 describe('parse()', function() {
@@ -196,7 +196,7 @@ U=</data>
   </dict>
 </plist>
 `;
-      const parsed = parse(xml);
+      const parsed = plist.parse(xml);
       assert.deepEqual(parsed, {
         CFBundleName: 'Emacs',
         CFBundlePackageType: 'APPL',
@@ -252,7 +252,7 @@ int main(int argc, char *argv[])
 </dict>
 </plist>
 `;
-      const parsed = parse(xml);
+      const parsed = plist.parse(xml);
       assert.deepEqual(parsed, {
         OptionsLabel: 'Product',
         PopupMenu: [
@@ -360,7 +360,7 @@ int main(int argc, char *argv[])
 </dict>
 </plist>
 `;
-      const parsed = parse(xml);
+      const parsed = plist.parse(xml);
       assert.deepEqual(parsed, {
         UIWebViewBounce: true,
         TopActivityIndicator: 'gray',
@@ -447,7 +447,7 @@ int main(int argc, char *argv[])
 </dict>
 </plist>
 `;
-      const parsed = parse(xml);
+      const parsed = plist.parse(xml);
       assert.deepEqual(parsed, {
         CFBundleDevelopmentRegion: 'en',
         CFBundleDisplayName: '${PRODUCT_NAME}',
